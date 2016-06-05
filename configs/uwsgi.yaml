@@ -1,0 +1,14 @@
+uwsgi:
+  socket: 0.0.0.0:8080
+  module: u2fval.wsgi
+  master: 1
+  processes: 5
+  chdir: /usr/local/lib/python3.5/site-packages/u2fval
+  pidfile: /var/run/u2fval-wsgi.pid
+  harakiri: 20
+  max-requests: 500
+  vacuum: 1
+  enable-threads: 1
+  uid: 503
+  gid: 503
+  die-on-term: 1
